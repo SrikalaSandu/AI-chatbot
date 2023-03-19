@@ -1,0 +1,22 @@
+import nltk
+from nltk.chat.util import Chat, reflections
+
+pairs = [    ['my name is (.*)', ['Hello %1']],
+    ['(hi|hello|hey|holla|howdy)', ['Hey there!', 'Hi there!']],
+    ['(.*) in (.*) is fun', ['%1 in %2 is indeed fun']],
+    ['(.*)(location|city) ?', 'Tokyo, Japan'],
+    ['(.*)created(.*)', ['Srikala created me using Python and NLTK']],
+    ['(.*) your name?', ['My name is ChatBot']],
+    ['(.*) help (.*)', ['I can help you']],
+    ['(.*) (play|song|music)', ['Sure, I will play music for you']],
+    ['(.*) (weather|temperature) ?', ['The temperature is 20C']],
+    ['(.*)', ['I did not understand what you said']],
+]
+
+def chatbot():
+    print("Hi, I'm ChatBot! How can I help you today?")
+    chat = Chat(pairs, reflections)
+    chat.converse()
+
+if __name__ == "__main__":
+    chatbot()
